@@ -1,0 +1,12 @@
+{
+    "description": "A roles bot made using StoatJS",
+    "icon": "Circle",
+    "subRoot": true,
+    "pages": [
+        "index",
+        "---Setup---",
+        "...setup",
+        "---References---",
+        "...references"
+    ]
+}

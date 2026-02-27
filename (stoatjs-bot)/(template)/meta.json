@@ -1,0 +1,13 @@
+{
+    "description": "A template for creating a Stoat bot using StoatJS",
+    "icon": "BookDashed",
+    "subRoot": true,
+    "pages": [
+        "index",
+        "---Setup---",
+        "...getting-started",
+        "---Development---",
+        "commands",
+        "events"
+    ]
+}

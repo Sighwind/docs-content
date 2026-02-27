@@ -1,0 +1,99 @@
+---
+title: Command Groups
+---
+
+Command groups allow you to organize related commands together. For example, you might have a group called "mod" that contains commands like "kick", "ban", and "mute".
+
+## Creating a Command Group
+
+Creating a command group is simple:
+
+<Steps>
+<Step>
+
+### Create a Folder
+
+Create a new folder inside `src/commands/` to group your related commands.
+
+</Step>
+
+<Step>
+
+### Add index.ts
+
+Create an `index.ts` file inside your folder and define the group using the `Command` class.
+
+```ts title="src/commands/folder/index.ts"
+import { Command } from "@/classes/command";
+
+export default new Command({
+  name: "",
+});
+```
+
+<Callout>
+  The `name` property must be left blank (`""`). Unlike actual commands, the
+  name will be inferred from the folder name.
+</Callout>
+
+</Step>
+
+<Step>
+
+### Add Commands
+
+Add your command files in the same folder. They will automatically be grouped.
+
+</Step>
+
+</Steps>
+
+## Inheritance
+
+Command group settings cascade down through subgroups. Each level can override settings from its parent.
+
+<Files>
+  <Folder name="src/commands" defaultOpen>
+    <Folder name="fun" defaultOpen>
+      <File name="index.ts" />
+      <File name="joke.ts" />
+      <Folder name="image" defaultOpen>
+        <File name="index.ts" />
+        <File name="meme.ts" />
+      </Folder>
+    </Folder>
+  </Folder>
+</Files>
+
+```ts tab="fun/index.ts"
+import { Command, PermissionLevel } from "@/classes/command";
+
+export default new Command({
+  name: "",
+  aliases: ["funny", "entertainment"],
+  permission: PermissionLevel.User, // All fun commands require user permission
+  cooldown: 5, // All fun commands have a 5 second cooldown
+});
+```
+
+```ts tab="fun/image/index.ts"
+import { Command, PermissionLevel } from "@/classes/command";
+
+export default new Command({
+  name: "",
+  aliases: ["img"],
+  cooldown: 2, // All image commands have a 2 second cooldown instead of 5
+});
+```
+
+- `joke` command: cooldown 5s, User permission (from fun group)
+- `meme` command (in fun/image): cooldown 2s, User permission (from fun group's permission)
+
+## Properties
+
+Command groups use the same properties as the [`Command`](./creating-commands) class.
+
+<AutoTypeTable
+  path="content/(stoatjs-bot)/(template)/interfaces.ts"
+  name="CommandGroup"
+/>
