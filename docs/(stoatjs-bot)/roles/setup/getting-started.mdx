@@ -1,3 +1,183 @@
 ---
 title: Getting Started
 ---
+
+<Callout>
+When filling the `<role>` parameter, please mention the role (e.g. `<role>`).
+</Callout>
+
+<Callout>
+When using a reaction role command, you can reply to a message if the command requires a `<messageId>`. This will automatically use the message you replied to as the target message for the reaction role. A message that has reaction roles is refered to as a set.
+</Callout>
+
+## Auto Roles
+
+Auto roles are roles that are automatically assigned to users when they join your server. You can set up auto roles using the [`autorole`](../references/commands#autorole) command. To list all auto roles in your server, use the following command:
+
+```
+!autorole list
+```
+
+### Adding Auto Roles
+
+To add an auto role, use the following command:
+
+```
+!autorole add <role>
+```
+
+You can add multiple auto roles at once by listing them in the command:
+
+```
+!autorole add <role> <role2>
+```
+
+### Removing Auto Roles
+
+To remove an auto role, use the following command:
+
+```
+!autorole remove <role>
+```
+
+You can remove multiple auto roles at once by listing them in the command:
+
+```
+!autorole remove <role> <role2>
+```
+
+You can remove all auto roles by using the `wipe` subcommand:
+
+```
+!autorole wipe
+```
+
+## Reaction Roles
+
+Reaction roles are roles that are automatically assigned to users when they react to a message with a specific emoji. You can set up reaction roles using the [`reactionrole`](../references/commands#reactionrole) command. To list all reaction roles in your server, use the following command:
+
+```
+!reactionrole list
+```
+
+<Callout>
+  When using the `list` subcommand, you can also specify a message ID (or reply
+  to it) to list the reaction roles for a specific message.
+</Callout>
+
+### Adding Reaction Roles
+
+To add a reaction role, use the following command:
+
+```
+!reactionrole add <messageId> <emoji> <role>
+```
+
+You can add multiple reaction roles at once by listing them in the command:
+
+```
+!reactionrole add <messageId> <emoji> <role> <emoji2> <role2>
+```
+
+### Removing Reaction Roles
+
+To remove a reaction role, use the following command:
+
+```
+!reactionrole remove <messageId> <role>
+```
+
+You can remove multiple reaction roles at once by listing them in the command:
+
+```
+!reactionrole remove <messageId> <role> <role2>
+```
+
+To remove all reaction roles for a specific message, you can use the `clear` subcommand:
+
+```
+!reactionrole clear <messageId>
+```
+
+You can remove all reaction roles from a server by using the `wipe` subcommand:
+
+```
+!reactionrole wipe <messageId>
+```
+
+### Maximum Roles
+
+You can set a maximum number of reaction roles that a user can have from a specific set. This means that if a user has already reached the maximum number of roles from that set, they will not be able to get any more roles from that set until they remove one of the roles they already have. You can manage the maximum number of roles using the `max` subcommand of the `reactionrole` command.
+
+<Callout>
+  Setting the maximum number of roles to `0` means that there is no limit to the
+  number of roles a user can have from that set.
+</Callout>
+
+```
+!reactionrole max <messageId> <number>
+```
+
+### Moving Reaction Roles
+
+You can move a reaction role set to a different message. To move a reaction role, use the `move` subcommand of the `reactionrole` command:
+
+<Callout type="warning">
+  You can only move a reaction role set to a different message within the same
+  channel. If you want to move a reaction role set to a different channel, you
+  will need to remake the set on the new message.
+</Callout>
+
+```
+!reactionrole move <oldMessageId> <newMessageId>
+```
+
+### Requirements
+
+Reaction role sets can have requirements. This means that users must have a specific role to be able to get the reaction role. You can manage requirements using the `require` subcommand of the `reactionrole` command. To list all requirements for a specific reaction role set, use the following command:
+
+```
+!reactionrole require list <messageId>
+```
+
+#### Adding Requirements
+
+To add a requirement, use the following command:
+
+```
+!reactionrole require add <messageId> <emoji> <role>
+```
+
+#### Removing Requirements
+
+To remove a requirement, use the following command:
+
+```
+!reactionrole require remove <messageId> <role>
+```
+
+You can remove multiple requirements at once by listing them in the command:
+
+```
+!reactionrole require remove <messageId> <role> <role2>
+```
+
+You can remove all requirements from a set by using the `clear` subcommand:
+
+```
+!reactionrole require clear <messageId>
+```
+
+### Disabling/Enabling Reaction Roles
+
+To disable reaction roles for the entire server, you can use the `disable` subcommand:
+
+```
+!reactionrole disable
+```
+
+To enable reaction roles for the entire server, you can use the `enable` subcommand:
+
+```
+!reactionrole enable
+```

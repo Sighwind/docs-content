@@ -1,3 +1,32 @@
 ---
 title: Commands
 ---
+
+This page contains a reference to all commands. For a guide on how to set up and use the Roles module, see the [Getting Started](../setup/getting-started) page.
+
+## Auto Role Commands
+
+| Command                   | Description                             |
+| ------------------------- | --------------------------------------- |
+| `!autorole add <role>`    | Adds an auto role to the server.        |
+| `!autorole list`          | Lists all auto roles in the server.     |
+| `!autorole remove <role>` | Removes an auto role from the server.   |
+| `!autorole wipe`          | Removes all auto roles from the server. |
+
+## Reaction Role Commands
+
+| Command                                            | Description                                                                        |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `!reactionrole add <messageId> <emoji> <role>`     | Adds a reaction role to a message.                                                 |
+| `!reactionrole clear <messageId>`                  | Clears all reaction roles from a message.                                          |
+| `!reactionrole disable`                            | Disables reaction roles for the entire server.                                     |
+| `!reactionrole enable`                             | Enables reaction roles for the entire server.                                      |
+| `!reactionrole list <messageId>`                   | Lists all reaction roles in the server or message                                  |
+| `!reactionrole max <messageId> <number>`           | Sets the maximum number of reaction roles a user can have from a specific message. |
+| `!reactionrole move <oldMessageId> <newMessageId>` | Moves a reaction role set to a different message in the same channel.              |
+| `!reactionrole remove <messageId> <role>`          | Removes a reaction role from a message.                                            |
+| `!reactionrole wipe`                               | Removes all reaction roles from the server.                                        |
+| `!reactionrole require add <messageId> <role>`     | Adds a requirement to a reaction role set.                                         |
+| `!reactionrole require clear <messageId>`          | Clears all requirements from a reaction role set.                                  |
+| `!reactionrole require remove <messageId> <role>`  | Removes a requirement from a reaction role set.                                    |
+| `!reactionrole require list <messageId>`           | Lists all requirements for a reaction role set.                                    |
