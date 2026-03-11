@@ -1,0 +1,40 @@
+---
+title: /{slug}
+---
+
+## Overview
+
+The **Counter** endpoint returns an image representation of a counter for a given slug. This endpoint increments the count each time it's accessed, making it useful for displaying live counters in documentation, blogs, or any web application.
+
+## Endpoint
+
+```
+GET /count.timeworn.net/{slug}
+```
+
+## Parameters
+
+<AutoTypeTable
+  path="content/docs/moe-counter/interfaces.ts"
+  name="CounterParams"
+/>
+
+## Example Requests
+
+### Basic Counter
+
+```
+https://count.timeworn.net/demo
+```
+
+### Custom Styling
+
+```
+https://count.timeworn.net/demo?theme=moebooru&padding=10&scale=1.5&darkmode=dark
+```
+
+## Response
+
+Returns an image representing the current count for the specified slug.
+
+<img src="https://count.timeworn.net/demo" alt="Counter Image" />

@@ -1,0 +1,11 @@
+{
+    "title": "Moe Counter",
+    "description": "A fork of Moe Counter",
+    "icon": "Hash",
+    "root": true,
+    "pages": [
+        "index.mdx",
+        "---API---",
+        "...api"
+    ]
+}

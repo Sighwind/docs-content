@@ -1,0 +1,40 @@
+---
+title: /record/{slug}
+---
+
+## Overview
+
+The **Counter Record** endpoint returns detailed information about a counter slug. Like the JSON endpoint, this endpoint **does not increment** the counter.
+
+## Endpoint
+
+```
+GET /count.timeworn.net/record/{slug}
+```
+
+## Parameters
+
+<AutoTypeTable
+  path="content/docs/moe-counter/interfaces.ts"
+  name="CounterSlugParams"
+/>
+
+## Example Requests
+
+### Basic Request
+
+```
+https://count.timeworn.net/record/demo
+```
+
+## Response
+
+Returns a JSON object with detailed information about the counter record:
+
+```json
+{
+  "slug": "demo",
+  "totalCount": 528,
+  "createdAt": "2026-03-10T22:09:15.050Z"
+}
+```

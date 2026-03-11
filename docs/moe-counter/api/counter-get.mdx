@@ -1,0 +1,39 @@
+---
+title: /get/{slug}
+---
+
+## Overview
+
+The **Counter JSON** endpoint returns the incremented count and slug in JSON format.
+
+## Endpoint
+
+```
+GET /count.timeworn.net/get/{slug}
+```
+
+## Parameters
+
+<AutoTypeTable
+  path="content/docs/moe-counter/interfaces.ts"
+  name="CounterSlugParams"
+/>
+
+## Example Requests
+
+### Basic Request
+
+```
+https://count.timeworn.net/get/demo
+```
+
+## Response
+
+Returns a JSON object with the slug and its current count:
+
+```json
+{
+  "slug": "demo",
+  "count": 42
+}
+```
