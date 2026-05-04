@@ -1,0 +1,11 @@
+{
+    "title": "Avatar",
+    "description": "A fork of Vercel's Avatar microservice",
+    "icon": "CircleUser",
+    "root": true,
+    "pages": [
+        "index.mdx",
+        "---API---",
+        "...api"
+    ]
+}
