@@ -12,14 +12,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: timeworn/docs
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.DOCS_PAT }}
           submodules: true
 
       - name: Update submodule reference
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git submodule update --init --recursive --remote
+          git submodule update --remote --recursive
           git add -A
-          git commit -m "chore: update docs content to latest" || echo "No changes to commit"
+          git commit -m "chore: update content" || echo "No changes to commit"
           git push
