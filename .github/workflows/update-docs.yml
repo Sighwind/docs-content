@@ -1,0 +1,25 @@
+name: Update Docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-docs-submodule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: timeworn/docs
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: true
+
+      - name: Update submodule reference
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git submodule update --init --recursive --remote
+          git add -A
+          git commit -m "chore: update docs content to latest" || echo "No changes to commit"
+          git push
