@@ -1,0 +1,11 @@
+{
+    "title": "RevivalSide",
+    "description": "A private server implementation",
+    "icon": "Server",
+    "root": true,
+    "pages": [
+        "index.mdx",
+        "---Guides---",
+        "...guides"
+    ]
+}
