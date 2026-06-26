@@ -2,6 +2,8 @@
     "pages": [
         "installation",
         "starting-and-connecting",
-        "importing-account-data"
+        "importing-account-data",
+        "saving-account-data",
+        "wiki"
     ]
 }
