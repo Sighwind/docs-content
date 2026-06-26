@@ -36,8 +36,26 @@ After logging in, head back to the "Cross Save" tab in the RevivalSide launcher,
 
 <Callout>
   "Extract and Copy" will take a while to complete. In order to see the progress, head to the "Home" tab in the launcher
-  and look at the "Logs" section under "Patch Hosts".
+  and look at the console under "Patch Hosts".
 </Callout>
+
+The console will show you the progress of the import process. You should see something like the following:
+
+```
+[20:11:23] Scanning counterside-all-2-Wi-Fi-20260625-201008.pcapng...
+[20:11:25]   5 candidate TCP stream(s)
+[20:11:25]   stream 0: 18,074 bytes
+{/* ... */}
+[20:11:27] Scanning counterside-all-5-Tailscale-20260625-201008.pcapng...
+[20:11:28]   23 candidate TCP stream(s)
+[20:11:28]   stream 26: 312,755 bytes
+[20:11:28] Cross Save import started from server:9.
+{/* ... */}
+[20:11:35] Found JOIN_LOBBY_ACK in counterside-all-5-Tailscale-20260625-201008.pcapng stream 26.
+[20:11:35] Copied users.json export and clipboard text: ...
+```
+
+When you see the line `Found JOIN_LOBBY_ACK in ...`, it means that RevivalSide has successfully imported your account data.
 
 </Step>
 <Step>
@@ -62,7 +80,11 @@ After importing your account data, you can launch the User Manager by clicking o
   This is error can be caused by a number of issues. If you have a solution that isn't listed here, please let us know.
 </Callout>
 
-If you are getting the error "No JOIN_LOBBY_ACK packet was found...", it means that RevivalSide was unable to capture or parse the necessary packets from the official servers. This can be caused by a number of issues, such as your firewall or vpn. In order to fix this, you can try the following:
+![](./assets/join-lobby-ack.webp)
+
+If you are getting the error "No JOIN_LOBBY_ACK packet was found...", it means that RevivalSide was unable to capture or parse the necessary packets from the official servers. This can be caused by a number of issues, such as your firewall or vpn.
+
+In order to fix this, you can try the following:
 
 - Disable your VPN
 - Disable your firewall
