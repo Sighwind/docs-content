@@ -5,6 +5,8 @@
     "root": true,
     "pages": [
         "index.mdx",
+        "---Setup---",
+        "...setup",
         "---Guides---",
         "...guides"
     ]
